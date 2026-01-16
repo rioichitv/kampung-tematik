@@ -45,8 +45,8 @@ Folder `vendor`, `node_modules`, dan file `.env` tidak disertakan di repository 
 ## ⚙️ Instalasi & Menjalankan Project
 
 ### 1. Clone Repository
-git clone https://github.com/rioichitv/kampung-tematik- .git
-cd kampung-tematik- 
+git clone https://github.com/rioichitv/kampung-tematik-classroom.git
+cd kampung-tematik
 
 ### 2. Install Dependency
 composer install
