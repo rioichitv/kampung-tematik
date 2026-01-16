@@ -1,25 +1,31 @@
-# Kampung Tematik Malang
+# Kampung Tematik
 
-Aplikasi web berbasis **Laravel** yang dibuat untuk mendukung pengelolaan dan informasi **Kampung Tematik**.
-Project ini dikembangkan dan dijalankan menggunakan **Laragon** sebagai web server lokal.
+Aplikasi **Kampung Tematik  ** adalah sistem berbasis web yang dibangun menggunakan **Laravel** untuk mendukung pengelolaan pembelajaran, konten, dan informasi Kampung Tematik secara digital dan terstruktur.
+
+Project ini dikembangkan sebagai bagian dari tugas/implementasi pembelajaran berbasis teknologi web.
+
+---
+
+## 🚀 Fitur Utama
+- Manajemen data Kampung Tematik
+- Pengelolaan konten pembelajaran
+- Sistem CRUD (Create, Read, Update, Delete)
+- Tampilan responsif
+- Integrasi video berbasis URL (bukan file lokal)
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
-
-* **Laravel** (Framework PHP)
-* **PHP 8+**
-* **MySQL**
-* **Laragon**
-* **Blade Template Engine**
-* **Vite**
-* **Bootstrap / CSS**
+- Laravel
+- PHP
+- MySQL
+- Blade Template
+- Bootstrap / CSS
+- Laragon (untuk development lokal)
 
 ---
 
-## 📁 Struktur Project
-
-```
+## 📂 Struktur Folder Penting
 app/
 bootstrap/
 config/
@@ -28,114 +34,61 @@ public/
 resources/
 routes/
 storage/
-tests/
-vendor/
-.env
 artisan
 composer.json
-web_laravel (1).sql
-```
+composer.lock
+
+Folder `vendor`, `node_modules`, dan file `.env` tidak disertakan di repository sesuai best practice Laravel.
 
 ---
 
 ## ⚙️ Instalasi & Menjalankan Project
 
-Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal.
+### 1. Clone Repository
+git clone https://github.com/rioichitv/kampung-tematik- .git
+cd kampung-tematik- 
 
-### 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/username/kampung-tematik-Malang.git
-```
-
-### 2️⃣ Masuk ke Folder Project
-
-```bash
-cd kampung-tematik
-```
-
-### 3️⃣ Install Dependency PHP
-
-```bash
+### 2. Install Dependency
 composer install
-```
 
-### 4️⃣ Copy File Environment
-
-```bash
+### 3. Konfigurasi Environment
 cp .env.example .env
-```
-
-### 5️⃣ Generate App Key
-
-```bash
 php artisan key:generate
-```
 
----
-
-## 🗄️ Konfigurasi Database
-
-1. Jalankan **Laragon**
-2. Buat database baru, contoh:
-
-   ```
-   kampung_tematik
-   ```
-3. Import file database:
-
-   ```
-   web_laravel (1).sql
-   ```
-4. Sesuaikan konfigurasi database di file `.env`
-
-```env
-DB_DATABASE=kampung_tematik
+Atur konfigurasi database di file `.env`:
+DB_DATABASE=nama_database
 DB_USERNAME=root
 DB_PASSWORD=
-```
 
----
+### 4. Migrasi Database
+php artisan migrate
 
-## ▶️ Menjalankan Aplikasi
-
-```bash
+### 5. Jalankan Server
 php artisan serve
-```
 
-Atau langsung akses melalui Laragon:
-
-```
-http://kampung-tematik.test
-```
+Akses aplikasi di:
+http://127.0.0.1:8000
 
 ---
 
-## 📌 Fitur Aplikasi
+## 🎥 Catatan Media / Video
+File video tidak disimpan langsung di repository GitHub karena batasan ukuran file.  
+Video disimpan menggunakan URL eksternal (Google Drive / YouTube / Cloud Storage).
 
-* Manajemen data Kampung Tematik
-* Tampilan halaman berbasis Blade
-* CRUD data
-* Integrasi database MySQL
-* Sistem routing Laravel
+---
+
+## 📌 Catatan Penting
+- Pastikan Composer sudah ter-install
+- Gunakan Laragon / XAMPP untuk environment lokal
+- Project ini menggunakan standar struktur Laravel
+
+---
+
+## 👨‍💻 Developer
+Rio Pratama Putra
 
 ---
 
 ## 📄 Lisensi
-
-Project ini dibuat untuk **pembelajaran dan pengembangan**.
-Bebas digunakan dan dimodifikasi sesuai kebutuhan.
-
----
-
-## 👤 Author
-
-**Rio Pratama Putra**
-Mahasiswa / Developer Pemula
-Project Laravel – Kampung Tematik Malang
-
----
-
-## ⭐ Catatan
-
-Jika project ini membantu, jangan lupa beri ⭐ di repository GitHub 😊
+Project ini dibuat untuk keperluan pembelajaran dan pengembangan.  
+Bebas digunakan dan dikembangkan kembali sesuai kebutuhan.
