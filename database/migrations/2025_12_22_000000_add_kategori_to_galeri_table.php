@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('galeri', function (Blueprint $table) {
+            if (! Schema::hasColumn('galeri', 'kategori')) {
+                $table->string('kategori', 100)->default('kampung-1000-topeng')->after('tipe');
+            } else {
+                $table->string('kategori', 100)->default('kampung-1000-topeng')->change();
+            }
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('galeri', function (Blueprint $table) {
+            if (Schema::hasColumn('galeri', 'kategori')) {
+                $table->dropColumn('kategori');
+            }
+        });
+    }
+};

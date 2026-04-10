@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title') - Kampung Tematik Malang</title>
+    <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    @stack('styles')
+</head>
+<body class="admin-body">
+    <div class="bg-orbs" aria-hidden="true">
+        <canvas id="particleNet"></canvas>
+    </div>
+    <header class="admin-topbar light">
+        <div class="topbar-left">
+            <button class="hamburger" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <span class="brand">KAMPUNG TEMATIK MALANG</span>
+        </div>
+        <div class="top-right-wrap">
+            <nav class="top-menu" id="topMenu">
+                <a href="{{ url('/') }}"><span class="icon">??</span>View Website</a>
+                <a class="active" href="{{ route('admin.dashboard') }}"><span class="icon">🏠</span>Dashboard</a>
+                <a href="#"><span class="icon">🛒</span>Pesanan</a>
+                <a href="#"><span class="icon">👤</span>Data Joki</a>
+                <a href="#"><span class="icon">💵</span>Deposit</a>
+                <div class="menu-dropdown">
+                    <button type="button"><span class="icon">⚙️</span>Konfigurasi ▾</button>
+                </div>
+                <div class="menu-dropdown">
+                    <button type="button"><span class="icon">🛍️</span>Produk ▾</button>
+                </div>
+                <div class="mobile-user">
+                    <div class="avatar-circle">A</div>
+                    <form method="POST" action="{{ route('admin.logout') }}">
+                        @csrf
+                        <button type="submit" class="logout-text">Logout</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="topbar-right desktop-user">
+                <div class="avatar">
+                    <div class="avatar-circle">A</div>
+                </div>
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+                    <button type="submit" class="logout-text">Logout</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main light">
+        @yield('content')
+    </main>
+
+    @stack('scripts')
+    <script src="{{ asset('js/admin-dashboard.js') }}"></script>
+</body>
+</html>
+

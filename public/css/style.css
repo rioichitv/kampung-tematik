@@ -1,0 +1,446 @@
+/* =========================================================
+   STYLE.CSS - Kampung Tematik Malang (Final Improved Full Version)
+   ========================================================= */
+
+/* ====== Global Reset ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fffdf8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ====== Transparent Navbar (Home Only - with background box) ====== */
+.transparent-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transparent-nav .logo-center {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  font-size: 1.1em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+/* ====== Navbar (For Other Pages) ====== */
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+nav .logo {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 1.1em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #88b04b;
+}
+
+/* ====== Hero Section (Video 360°) ====== */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 0;
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* FULL layar */
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  display: block;
+}
+
+/* Hero Title di tengah video */
+.hero h1 {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+/* ===== Tombol Suara ===== */
+.mute-btn {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mute-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.05);
+}
+
+/* ====== Pilih Kampung Section ====== */
+.pilih-kampung {
+  text-align: center;
+  padding: 40px 1rem 34px;
+  background-color: #fff;
+}
+
+.pilih-kampung h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pilih-kampung p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+/* Dropdown Styling */
+.pilih-kampung select {
+  padding: 12px 14px;
+  width: 528px;
+  max-width: 90%;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 9px;
+  border: 1.4px solid #b4b4b4;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
+  appearance: none;
+  background-color: white;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23000' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.pilih-kampung select:hover {
+  border-color: #4a7c3a;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pilih-kampung select:focus {
+  outline: none;
+  border-color: #4a7c3a;
+  box-shadow: 0 0 0 3px rgba(74, 124, 58, 0.2);
+}
+
+/* ====== Rekomendasi Desa Wisata ====== */
+.rekomendasi,
+.berita {
+  text-align: center;
+  padding: 38px 18px;
+}
+.rekomendasi h2,
+.berita h2{
+  font-size: 23px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.rekomendasi p,
+.berita p{
+  color:#666;
+  font-size:15px;
+  margin-bottom:20px;
+}
+.kampung-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+  gap:12px;
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 8px;
+  justify-items:center;
+}
+.kampung-card{
+  background:#fff;
+  border:1px solid #dcdcdc;
+  border-radius:12px;
+  overflow:hidden;
+  text-align:left;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  width:100%;
+  max-width:520px;
+}
+.kampung-card img{
+  width:100%; height:210px; object-fit:cover;
+}
+.kampung-card .content{padding:12px 14px;}
+.kampung-card h3{
+  font-size:18px; margin-bottom:9px; font-weight:700;
+  display:flex; align-items:center; gap:6px;
+}
+.kampung-card h3::before{content:"🏠";}
+.kampung-card p{color:#555; font-size:15px; line-height:1.7;}
+.berita-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:14px;
+  max-width:1050px;
+  margin:0 auto;
+  padding:0 10px;
+  justify-items:center;
+}
+.berita-card{
+  background:#fff;
+  border:1px solid #dcdcdc;
+  border-radius:12px;
+  overflow:hidden;
+  text-align:left;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  width:100%;
+  max-width:360px;
+}
+.berita-card img{width:100%; height:190px; object-fit:cover;}
+.berita-card .info{padding:12px 14px;}
+.berita-card h4{font-size:17px; margin-bottom:9px; font-weight:700;}
+.berita-card p{font-size:15px; color:#555; line-height:1.7;}
+.tanggal{
+  display:flex; align-items:center; gap:6px;
+  font-size:14.5px; color:#777; margin-bottom:8px;
+}
+.tanggal::before{content:\"\";}
+
+/* ====== Other Sections (detail pages) ====== */
+.info-section,
+.event-section,
+.sejarah,
+.galeri,
+.visi-misi,
+.tujuan,
+.fungsi {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.info-grid,
+.event-list,
+.galeri-grid,
+.visi-misi-grid,
+.fungsi-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.event-card,
+.fungsi-box,
+.visi,
+.misi {
+  width: 320px;
+}
+
+/* ====== Footer ====== */
+footer {
+  background-color: #2d4f34;
+  color: #fff;
+  padding: 24px 26px 18px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.9fr 0.9fr;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.footer-column h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.footer-about {
+  flex: 1 1 42%;
+}
+.footer-desc {
+  max-width: 520px;
+  font-size: 13.5px;
+  color: #e6e6e6;
+  line-height: 1.65;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 12px;
+  font-size: 14.5px;
+}
+.footer-column ul li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #d2d8d3;
+  font-weight: 700;
+}
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+.footer-inner .footer-column:nth-child(2){margin-left:20%}
+.copyright {
+  width: 100%;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  text-align: center;
+  color: #d4dbd5;
+}
+
+/* ====== Berita Slider Override ====== */
+.berita-slider{position:relative; max-width:1150px; margin:0 auto; padding:0 56px;}
+.berita-viewport{overflow:hidden; width:100%; max-width:1024px; margin:0 auto; cursor:grab;}
+.berita-viewport:active{cursor:grabbing;}
+.berita-track{display:flex; gap:16px; transition:transform .6s ease;}
+.berita-list{display:block; padding:0; max-width:none; margin:0;}
+.berita-card{width:320px; max-width:none; flex-shrink:0; cursor:pointer;}
+.berita-modal{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:999;
+}
+.berita-modal.show{display:flex;}
+.berita-modal__overlay{
+  position:absolute; inset:0; background:rgba(0,0,0,0.55); backdrop-filter:blur(2px);
+}
+.berita-modal__dialog{
+  position:relative; background:#fff; border-radius:14px; max-width:960px; width:80%; padding:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25); z-index:1;
+  max-height:85vh; overflow-y:auto;
+}
+.berita-modal__close{
+  position:absolute; top:10px; right:10px; border:none; background:#f3f4f6; width:32px; height:32px; border-radius:50%;
+  cursor:pointer; font-size:16px; font-weight:700;
+}
+.berita-modal__image img{width:100%; border-radius:10px; object-fit:cover; max-height:320px;}
+.berita-modal__body{padding:10px 4px;}
+.berita-modal__body h4{margin:6px 0 8px; font-size:18px;}
+.berita-modal__body p{color:#4b5563; line-height:1.6;}
+
+.rekom-modal{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:999;
+}
+.rekom-modal.show{display:flex;}
+.rekom-modal__overlay{
+  position:absolute; inset:0; background:rgba(0,0,0,0.55); backdrop-filter:blur(2px);
+}
+.rekom-modal__dialog{
+  position:relative; background:#fff; border-radius:14px; max-width:960px; width:80%; padding:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25); z-index:1;
+  max-height:85vh; overflow-y:auto;
+}
+.rekom-modal__dialog::-webkit-scrollbar{width:8px;}
+.rekom-modal__dialog::-webkit-scrollbar-thumb{background:#c9d2ce; border-radius:10px;}
+.rekom-modal__dialog::-webkit-scrollbar-track{background:rgba(0,0,0,0.04);}
+.rekom-modal__image{margin-bottom:10px;}
+.rekom-modal__image img{width:100%; border-radius:10px; object-fit:cover; max-height:320px;}
+.rekom-modal__body{padding:10px 4px;}
+.rekom-modal__body h4{margin:6px 0 8px; font-size:18px;}
+.rekom-modal__body p{color:#4b5563; line-height:1.6;}
+.rekom-modal__close{
+  position:absolute; top:10px; right:10px; border:none; background:#f3f4f6; width:32px; height:32px; border-radius:50%;
+  cursor:pointer; font-size:16px; font-weight:700;
+}
+.rekom-modal__image img{width:100%; border-radius:10px; object-fit:cover; max-height:320px;}
+.rekom-modal__body{padding:10px 4px;}
+.rekom-modal__body h4{margin:6px 0 8px; font-size:18px;}
+.rekom-modal__body p{color:#4b5563; line-height:1.6;}
+
+/* ====== Responsive ====== */
+
+/* ===== Modal Rekomendasi ===== */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .video-wrapper {
+    height: 90vh;
+  }
+
+  .pilih-kampung select {width: 95%;}
+
+  .kampung-list,
+  .berita-list {padding:0 10px; max-width:100%;}
+  .kampung-card,.berita-card{max-width:520px;}
+  .berita-slider{padding:0 36px;}
+  .berita-track{gap:12px;}
+  .berita-card{width:260px;}
+
+  .mute-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .rekom-modal__dialog{width:90vw; max-width:520px;}
+}
