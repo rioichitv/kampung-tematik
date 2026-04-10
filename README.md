@@ -2,7 +2,7 @@
 
 Aplikasi **Kampung Tematik  ** adalah sistem berbasis web yang dibangun menggunakan **Laravel** untuk mendukung pengelolaan pembelajaran, konten, dan informasi Kampung Tematik secara digital dan terstruktur.
 
-Project ini dikembangkan sebagai bagian dari tugas/implementasi pembelajaran berbasis teknologi web.
+Project ini dikembangkan sebagai bagian dari tugas/implementasi pembelajaran berbasis teknologi website.
 
 ---
 
