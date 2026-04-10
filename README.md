@@ -85,8 +85,8 @@ Video disimpan menggunakan URL eksternal (Google Drive / YouTube / Cloud Storage
 ---
 
 ## 👨‍💻 Developer
-Rio Pratama Putra
-Regan Gradasi Matahari Jingga
+- Rio Pratama Putra
+- Regan Gradasi Matahari Jingga
 
 ---
 
